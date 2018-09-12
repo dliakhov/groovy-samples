@@ -4,4 +4,8 @@ class HelloGroovy {
         println "Hello"
     }
 
+    def sayHello() {
+        "hello"
+    }
+
 }
