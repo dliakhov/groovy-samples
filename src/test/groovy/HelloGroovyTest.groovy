@@ -2,7 +2,7 @@ import spock.lang.Specification
 
 class HelloGroovyTest extends Specification {
 
-    def "check hello world execution"() {
+    def "check sayHello execution"() {
         setup:
         def helloWorld = new HelloGroovy()
 
@@ -10,7 +10,7 @@ class HelloGroovyTest extends Specification {
         def res = helloWorld.sayHello()
 
         then:
-        res == "hello"
+        res == "hello groovy"
     }
 
 }
