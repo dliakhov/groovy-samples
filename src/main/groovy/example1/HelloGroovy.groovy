@@ -1,8 +1,8 @@
-package example1
+package example1;
 
 public class HelloGroovy {
 
-    static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("Hello Groovy");
     }
 
