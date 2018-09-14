@@ -60,4 +60,17 @@ class GroovyTaskTest extends Specification {
         task["startDate"] == date
     }
 
+    def "check access using safe navigation operator"() {
+        given:
+        def tasks = [new GroovyTask(name: "name")]
+        def task = tasks.find { it.name == "test" }
+
+        when:
+        def taskPriority = task?.priority
+
+        then:
+        task == null
+        taskPriority == null
+    }
+
 }
