@@ -1,4 +1,4 @@
-package example4
+package example3
 
 import spock.lang.Specification
 
@@ -36,6 +36,7 @@ class GroovyTaskTest extends Specification {
         task.name == "test2"
         task.endDate == date
         task.priority == 5
+        task.@priority == 3
         task.startDate == date
     }
 

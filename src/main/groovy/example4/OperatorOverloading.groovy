@@ -1,4 +1,4 @@
-package example5
+package example4
 
 class Fly {
     double weight

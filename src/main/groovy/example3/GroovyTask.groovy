@@ -1,4 +1,4 @@
-package example4
+package example3
 
 class GroovyTask {
     String name
@@ -7,8 +7,8 @@ class GroovyTask {
     Date endDate
     boolean completed
 
-    def setPriority(priority) {
-        this.priority = priority + 2
+    def getPriority() {
+        this.priority + 2
     }
 
 }
