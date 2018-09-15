@@ -41,6 +41,18 @@ class GroovyMapTest extends Specification {
         map.e == 11
     }
 
+    def "show map iteration"() {
+        setup:
+        def map
 
+        when:
+        map = [a: 1, b: 2, "c": 3]
+        map.each {entry ->
+            println "$entry.key = $entry.value"
+        }
+
+        then:
+        map.every { it.key instanceof String }
+    }
 
 }
