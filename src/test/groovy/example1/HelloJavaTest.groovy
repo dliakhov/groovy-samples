@@ -1,6 +1,5 @@
 package example1
 
-import example1.HelloJava
 import spock.lang.Specification
 
 class HelloJavaTest extends Specification {
