@@ -11,8 +11,8 @@ class Fly {
 class Cutlet {
     double weight
 
-    Fly plus(Fly fly) {
-        new Fly(weight: this.weight + fly.weight / 2)
+    Cutlet plus(Fly fly) {
+        new Cutlet(weight: this.weight + fly.weight / 2)
     }
 
 }

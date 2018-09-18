@@ -26,7 +26,7 @@ class OperatorOverloadingTest extends Specification {
         def result = cutlet + fly
 
         then:
-        result instanceof Fly
+        result instanceof Cutlet
         Double.compare(result.weight, 6) == 0
     }
 
