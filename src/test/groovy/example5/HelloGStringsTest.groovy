@@ -24,6 +24,7 @@ class HelloGStringsTest extends Specification {
         then:
         result == 'Hello Test' // call compareTo then equals!
         !result.equals('Hello Test') // false here
+        result.hashCode() != 'Hello Test'.hashCode() // different hashcodes
     }
 
     def "check sayHelloMultilineString execution"() {
