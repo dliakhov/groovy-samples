@@ -7,8 +7,12 @@ class GroovyTask {
     Date endDate
     boolean completed
 
-    def getPriority() {
-        this.priority + 2
+    def getName() {
+        "Task: " + this.name
     }
 
+    def addTask(GroovyTask task, int additionalPriority = 0) {
+        new GroovyTask(name: task.name, priority: task.priority + additionalPriority,
+                startDate: task.startDate, endDate: task.endDate, completed: task.completed)
+    }
 }

@@ -13,9 +13,9 @@ class GroovyTaskTest extends Specification {
 
         then:
         task.completed
-        task.name == "test"
+        task.name == "Task: test"
         task.endDate == date
-        task.priority == 3
+        task.priority == 1
         task.startDate == date
     }
 
@@ -33,10 +33,10 @@ class GroovyTaskTest extends Specification {
 
         then:
         !task.completed
-        task.name == "test2"
+        task.name == "Task: test2"
+        task.@name == "test2"
         task.endDate == date
-        task.priority == 5
-        task.@priority == 3
+        task.priority == 3
         task.startDate == date
     }
 
@@ -55,9 +55,9 @@ class GroovyTaskTest extends Specification {
 
         then:
         !task["completed"]
-        task["name"] == "test2"
+        task["name"] == "Task: test2"
         task["endDate"] == date
-        task["priority"] == 5
+        task["priority"] == 3
         task["startDate"] == date
     }
 
@@ -74,4 +74,18 @@ class GroovyTaskTest extends Specification {
         taskPriority == null
     }
 
+    def "check default arguments"() {
+        given:
+        def date = new Date()
+        def task = new GroovyTask(name: "test", completed: true, endDate: date, priority: 1, startDate: date)
+        
+        when:
+        def resultTask = task.addTask(task, 3) 
+        def resultTaskWithoutPriority = task.addTask(task) 
+        
+        then:
+        resultTask.priority == 4
+        resultTaskWithoutPriority.priority == 1
+    }
+    
 }
