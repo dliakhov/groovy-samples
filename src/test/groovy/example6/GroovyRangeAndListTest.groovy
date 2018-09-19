@@ -52,6 +52,7 @@ class GroovyRangeAndListTest extends Specification {
 
         bigList[-1] == 100
         bigList[-1..-4] == [100, 99, 98, 97]
+        bigList[-100] == 1
     }
 
 
